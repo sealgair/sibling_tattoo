@@ -1,0 +1,64 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+    body {
+        display: flex;
+    }
+    #coords {
+        margin: 1em;
+        padding: 0.5em;
+        border: 1px black;
+        width: 10em;
+        height: 1em;
+        font-size: 18pt;
+    }
+    #cursor {
+        width: 5px;
+        height: 5px;
+        border-radius: 8px;
+        border: 2px solid green;
+        position: absolute;
+        z-index: 100;
+    }
+    </style>
+<head>
+<body>
+    <img id="target" src="raven1.svg" style="background-image: url(raven1b.jpg); background-size: 100% auto;"/>
+    <input type="text" id="coords" redonly></input>
+    <div id="cursor"/>
+    <script>
+    function get_coords(event) {
+        var $target = $(event.target);
+        var offset = $target.offset();
+        var x = parseFloat((event.pageX - offset.left) / ($target.innerWidth()) * 100).toFixed(2);
+        var y = parseFloat((event.pageY - offset.top) / ($target.innerHeight()) * 100).toFixed(2);
+        return {x: x, y: y};
+    }
+    $(function() {
+        $("#target").mousemove(function(event) {
+            var coords = get_coords(event);
+            $("#coords").val(coords.x + ' ' + coords.y);
+        });
+        $("#target").mouseleave(function(event) {
+            $("#coords").val("");
+        });
+        $("#target").click(function(event) {
+            var cursor = $("#cursor");
+            cursor.css({left: event.pageX - cursor.outerWidth()/2 - 1, top: event.pageY - cursor.outerHeight()/2 - 1});
+
+            var target = document.getElementById("coords");
+            target.focus();
+            target.setSelectionRange(0, target.value.length);
+            var succeed;
+            try {
+                succeed = document.execCommand("copy");
+            } catch(e) {
+                succeed = false;
+            }
+            target.blur();
+        });
+    });
+    </script>
+</body>
+</html
