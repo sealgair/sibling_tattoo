@@ -1,4 +1,5 @@
 <html>
+ <meta charset="UTF-8">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style>
@@ -8,7 +9,6 @@
     #coords {
         margin: 1em;
         padding: 0.5em;
-        border: 1px black;
         width: 10em;
         height: 1em;
         font-size: 18pt;
@@ -20,11 +20,22 @@
         border: 2px solid green;
         position: absolute;
         z-index: 100;
+        pointer-events: none;
+    }
+    #target {
+        overflow: hidden;
+        width: 800px;
+        height: 800px;
+    }
+    #target-object {
+        width: 800px;
+        height: 800px;
+        pointer-events: none;
     }
     </style>
 <head>
 <body>
-    <img id="target" src="raven1.svg" style="background-image: url(raven1b.jpg); background-size: 100% auto;"/>
+    <div id="target"><object id="target-object" data="snake1.svg" type="image/svg+xml"></object></div>
     <input type="text" id="coords" redonly></input>
     <div id="cursor"/>
     <script>
@@ -37,6 +48,7 @@
     }
     $(function() {
         $("#target").mousemove(function(event) {
+            console.log(event);
             var coords = get_coords(event);
             $("#coords").val(coords.x + ' ' + coords.y);
         });
@@ -57,6 +69,14 @@
                 succeed = false;
             }
             target.blur();
+        });
+        $("#coords").change(function(event) {
+            var coords = $(event.target).val().split(" ");
+            var cursor = $("#cursor");
+            var target = $("#target");
+            var x = coords[0] * target.outerWidth() / 100;
+            var y = coords[1] * target.outerHeight() / 100;
+            cursor.css({left: x - cursor.outerWidth()/2 - 1, top: y - cursor.outerHeight()/2 - 1});
         });
     });
     </script>
