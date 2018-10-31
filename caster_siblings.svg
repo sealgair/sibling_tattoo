@@ -132,8 +132,8 @@
       <use xlink:href="#line" transform="translate(50, 50) rotate(54)"/>
       <use xlink:href="#line" transform="translate(50, 50) rotate(72)"/>
     </g>
-    <svg viewBox="44 10 35 35" x="50" y="50" width="50" height="50">
-      <g id="raven1" class="animal raven medieval">
+    <svg viewBox="55 0 45 45" x="50" y="50" width="50" height="50">
+      <g id="raven1b" class="animal raven medieval">
         <use xlink:href="raven1.svg#raven"/>
       </g>
     </svg>

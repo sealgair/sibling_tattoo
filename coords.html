@@ -37,7 +37,7 @@
     </style>
 <head>
 <body>
-    <div id="target"><object id="target-object" data="badger1.svg" type="image/svg+xml"></object></div>
+    <div id="target"><object id="target-object" data="" type="image/svg+xml"></object></div>
     <input type="text" id="coords" redonly></input>
     <div id="cursor"/>
     <script>
@@ -49,9 +49,19 @@
         return {x: x, y: y};
     }
     function draw_coords(event) {
-        console.log(event);
         var coords = get_coords(event);
         $("#coords").val(coords.x + ' ' + coords.y);
+    }
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
     }
     $(function() {
         $("#target").mousemove(function(event) {
@@ -84,9 +94,16 @@
             var y = coords[1] * target.outerHeight() / 100;
             cursor.css({left: x - cursor.outerWidth()/2 - 1, top: y - cursor.outerHeight()/2 - 1});
         });
-        var data_url = $("#target-object").attr("data");
+        var data_url = getUrlVars()['img'];
+        console.log(data_url);
+        if (typeof data_url == 'undefined') {
+            data_url = 'caster_siblings.svg'
+        }
+        $("#target-object").attr("data", data_url);
         $(window).on("focus", function(){
-            document.location.reload(false);
+            var target = $("#target").html();
+            $("#target").empty();
+            $("#target").html(target);
         });
     });
     </script>
