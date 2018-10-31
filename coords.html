@@ -12,6 +12,9 @@
         width: 10em;
         height: 1em;
         font-size: 18pt;
+        position: fixed;
+        top: 1em;
+        left: 1em;
     }
     #cursor {
         width: 5px;
@@ -23,7 +26,6 @@
         pointer-events: none;
     }
     #target {
-        overflow: hidden;
         width: 800px;
         height: 800px;
     }
@@ -35,7 +37,7 @@
     </style>
 <head>
 <body>
-    <div id="target"><object id="target-object" data="snake1.svg" type="image/svg+xml"></object></div>
+    <div id="target"><object id="target-object" data="badger1.svg" type="image/svg+xml"></object></div>
     <input type="text" id="coords" redonly></input>
     <div id="cursor"/>
     <script>
@@ -46,16 +48,20 @@
         var y = parseFloat((event.pageY - offset.top) / ($target.innerHeight()) * 100).toFixed(2);
         return {x: x, y: y};
     }
+    function draw_coords(event) {
+        console.log(event);
+        var coords = get_coords(event);
+        $("#coords").val(coords.x + ' ' + coords.y);
+    }
     $(function() {
         $("#target").mousemove(function(event) {
-            console.log(event);
-            var coords = get_coords(event);
-            $("#coords").val(coords.x + ' ' + coords.y);
+            draw_coords(event);
         });
         $("#target").mouseleave(function(event) {
             $("#coords").val("");
         });
         $("#target").click(function(event) {
+            draw_coords(event);
             var cursor = $("#cursor");
             cursor.css({left: event.pageX - cursor.outerWidth()/2 - 1, top: event.pageY - cursor.outerHeight()/2 - 1});
 
@@ -77,6 +83,10 @@
             var x = coords[0] * target.outerWidth() / 100;
             var y = coords[1] * target.outerHeight() / 100;
             cursor.css({left: x - cursor.outerWidth()/2 - 1, top: y - cursor.outerHeight()/2 - 1});
+        });
+        var data_url = $("#target-object").attr("data");
+        $(window).on("focus", function(){
+            document.location.reload(false);
         });
     });
     </script>

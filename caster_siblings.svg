@@ -19,18 +19,25 @@
       stroke: red;
     }
     .air {
-      stroke: blue;
+      stroke: #87cefa;
     }
   
     .animal {
       stroke-width: 0.5;
       stroke: black;
+      stroke-linecap: round;
+    }
+    .badger {
+      fill: #424343;
     }
     .raven {
       fill: #8C7853;
     }
     .snake {
       fill: #C0C0C0;
+    }
+    .lion {
+      fill: #D4AF37;
     }
   </style>
 
@@ -80,6 +87,12 @@
       <circle cx="50" cy="50" r="36"/>
       <circle cx="50" cy="50" r="46"/>
     </g>
+
+    <svg viewBox="0 32 30 30 " x="0" y="0" width="50" height="50">
+      <g id="badger1" class="animal badger medieval">
+        <use xlink:href="badger1.svg#badger"/>
+      </g>
+    </svg>
   </g>
 
   <g id="slytherin" clip-path="url(#slytherin-clip)">
@@ -92,15 +105,7 @@
 
     <svg viewBox="66 10 35 35" x="50" y="0" width="50" height="50">
       <g id="snake1" class="animal snake medieval">
-        <path d="M 82.38 27.88 L 94.25 29.38 L 93.88 27.75 L 98.63 31.00 L 93.13 31.87 L 94.25 30.63 L 82.13 29.13"/>
-
-        <path d="M 70.75 37.00 Q 66.50 17.95 84.50 21.00 Q 86.25 20.50 86.50 22.13 Q 89.38 23.00 92.13 25.00 Q 93.13 26.38 91.25 27.50 Q 87.75 28.38 88.63 27.75 Q 84.25 27.25 84.25 27.75 Q 83.00 28.50 84.00 29.38 Q 85.25 30.13 89.13 29.50 Q 90.13 30.13 88.88 30.88 Q 81.38 31.75 79.50 30.88 Q 77.75 31.25 79.50 36.25"/>
-        <path d="M 70.75 37.00 Q 71.63 39.25 72.13 37.00 Q 73.13 39.50 73.63 37.13 Q 74.63 39.48 75.25 36.88 Q 76.25 39.45 77.13 36.38 Q 77.88 39.28 78.50 36.50 Q 79.50 38.00 79.50 36.25"/>
-
-        <path d="M 86.13 24.13 Q 84.88 22.25 82.13 23.50"/>
-        <ellipse cx="84.00" cy="24.38" rx="1.5" ry=".75" fill="white"/>
-        <circle cx="84.25" cy="24.38" r="0.5" fill="black"/>
-        <circle cx="90.25" cy="25.87" r="0.25" fill="black"/>
+        <use xlink:href="snake1.svg#snake"/>
       </g>
     </svg>  
   </g>
@@ -112,6 +117,12 @@
       <use xlink:href="#squiggle" transform="translate(50, 50) rotate(144)"/>
       <use xlink:href="#squiggle" transform="translate(50, 50) rotate(162)"/>
     </g>
+
+    <svg viewBox="34 -3 35 35" x="0" y="50" width="50" height="50">
+      <g id="lion1" class="animal lion medieval">
+        <use xlink:href="lion1.svg#lion"/>
+      </g>
+    </svg>  
   </g>
 
   <g id="ravenclaw" clip-path="url(#ravenclaw-clip)">
@@ -123,12 +134,7 @@
     </g>
     <svg viewBox="44 10 35 35" x="50" y="50" width="50" height="50">
       <g id="raven1" class="animal raven medieval">
-        <path d="M 65.63 25.50 Q 72.13 25.50 74.38 24.25 Q 70.50 18.88 65.50 22.63 Q 62.00 24.25 65.63 25.50"/>
-        <path d="M 66.50 18.88 Q 79.50 20.13 77.00 25.62 Q 76.25 26.63 75.63 25.75 Q 74.13 22.00 65.50 22.63 Q 62.75 20.00 66.50 18.88"/>
-        <path d="M 49.00 27.00 Q 55.63 10.13 66.50 18.88 Q 65.00 20.63 65.50 22.63 Q 64.25 24.25 65.63 25.50 Q 64.25 28.63 62.63 29.38 Q 56.13 31.62 49.00 27.00"/>
-        <path d="M 49.00 27.00 Q 46.13 29.50 45.88 33.75 Q 50.50 32.88 52.63 28.63 Q 50.50 33.25 51.88 36.00 Q 55.75 34.25 56.38 29.63 Q 55.63 34.38 58.00 36.63 Q 61.25 34.50 60.00 29.63 Q 60.62 35.00 63.25 36.38 Q 65.13 33.38 62.63 29.38"/>
-        <circle cx="59.25" cy="21.8" r="2.25" fill="white"/>
-        <circle cx="59.25" cy="21.8" r="0.78" fill="black"/>
+        <use xlink:href="raven1.svg#raven"/>
       </g>
     </svg>
   </g>
