@@ -15,6 +15,7 @@
     }
     #controls {
         padding: 1em;
+        font-size: 24pt;
     }
     #controls button {
         font-size: 24pt;
@@ -27,10 +28,14 @@
     </style>
 </head>
 <body>
-    <div id="wrapper"><object id="tattoo" data="caster_siblings.svg" type="image/svg+xml"></object></div>
-    <p id="controls"/>
-    <button id="all-color">Color All</button>
-    </p>
+    <span id="wrapper"><object id="tattoo" data="caster_siblings.svg" type="image/svg+xml"></object></span>
+    <div id="controls"/>
+        <button id="all-color">Color All</button>
+        <br/>
+        <label3>Background:</label>
+        <button id="back-radial" class="background-change" value="radial">Radial</button>
+        <button id="back-linear" class="background-change" value="linear">Linear</button>
+    </div>
     
     <script>
     $(function() {
@@ -60,12 +65,19 @@
             var svg = $("#tattoo").getSVG();
             svg.find(".quadrant").addClass("active");
         });
+        $(".background-change").on("click touchstart", function(event) {
+            var svg = $("#tattoo").getSVG();
+            svg.find(".element").removeClass('active');
+            svg.find(".element."+event.target.value).addClass('active');
+        });
 
         var r = Math.floor(Math.random() * 4);
         var house = ["#hufflepuff", "#slytherin", "#gryffindor", "#ravenclaws"][r];
         
         var svg = $("#tattoo").getSVG();
         svg.find(house).addClass("active");
+        svg.find(".element.radial").addClass('active');
+
     });
     </script>
 </body>

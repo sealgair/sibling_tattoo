@@ -10,9 +10,14 @@
       fill: transparent;
       stroke-width: 3;
       stroke-linecap: round;
-      opacity: 0.6;
       stroke: #D79349;
+      opacity: 0;
     }
+
+    .element.active {
+      opacity: 0.6;
+    }
+
     .active .earth {
       stroke: gold;
     }
@@ -94,11 +99,17 @@
   <rect x="0" y="0" width="100" height="100" stroke-width="0" fill="var(--skin-tone)"/> 
 
   <g id="hufflepuff" class="quadrant" clip-path="url(#hufflepuff-clip)">
-    <g id="earth1" class="element earth">
+    <g id="earth1" class="element earth radial">
       <circle cx="50" cy="50" r="16"/>
       <circle cx="50" cy="50" r="26"/>
       <circle cx="50" cy="50" r="36"/>
       <circle cx="50" cy="50" r="46"/>
+    </g>
+    <g id="earth2" class="element earth linear">
+      <line x1="3" y1="10" x2="50" y2="10"/>
+      <line x1="3" y1="20" x2="50" y2="20"/>
+      <line x1="3" y1="30" x2="50" y2="30"/>
+      <line x1="3" y1="40" x2="50" y2="40"/>
     </g>
 
     <svg viewBox="0 32 30 30 " x="0" y="0" width="50" height="50">
@@ -109,11 +120,17 @@
   </g>
 
   <g id="slytherin" class="quadrant" clip-path="url(#slytherin-clip)">
-    <g id="water1" class="element water">
+    <g id="water1" class="element water radial">
       <path d="M 66 50 Q 63.83 47.81 65.22 45.06 Q 66.93 41.37 62.94 40.60 Q 59.90 40.10 59.40 37.06 Q 58.63 33.07 54.94 34.78 Q 52.19 36.17 50.00 34.00"/>
       <path d="M 76 50 Q 73.85 47.31 75.35 44.21 Q 77.37 40.42 73.43 38.72 Q 70.32 37.23 70.33 33.79 Q 70.51 29.49 66.21 29.67 Q 62.77 29.68 61.28 26.57 Q 59.58 22.63 55.79 24.65 Q 52.69 26.15 50.00 24.00"/>
       <path d="M 86 50 Q 83.87 47.04 85.45 43.75 Q 87.67 39.91 83.83 37.69 Q 80.81 35.63 81.18 32.00 Q 81.95 27.63 77.58 26.86 Q 74.04 25.96 73.14 22.42 Q 72.37 18.05 68.00 18.82 Q 64.37 19.19 62.31 16.17 Q 60.09 12.33 56.25 14.55 Q 52.96 16.13 50.00 14.00"/>
       <path d="M 96 50 Q 93.89 46.86 95.53 43.45 Q 97.88 39.58 94.14 37.04 Q 91.23 34.62 91.84 30.89 Q 93.01 26.52 88.70 25.13 Q 85.22 23.63 84.76 19.88 Q 84.65 15.35 80.12 15.24 Q 76.37 14.78 74.87 11.30 Q 73.48 6.99 69.11 8.16 Q 65.38 8.77 62.96 5.86 Q 60.42 2.12 56.55 4.47 Q 53.14 6.11 50.00 4.00"/>
+    </g>
+    <g id="water2" class="element water linear">
+        <use xlink:href="#squiggle" transform="translate(50, 10) scale(0.94, 1)"/>
+        <use xlink:href="#squiggle" transform="translate(50, 20) scale(0.94, 1)"/>
+        <use xlink:href="#squiggle" transform="translate(50, 30) scale(0.94, 1)"/>
+        <use xlink:href="#squiggle" transform="translate(50, 40) scale(0.94, 1)"/>
     </g>
 
     <svg viewBox="66 10 35 35" x="50" y="0" width="50" height="50">
@@ -124,11 +141,17 @@
   </g>
 
   <g id="gryffindor" class="quadrant" clip-path="url(#gryffindor-clip)">
-    <g id="fire1" class="element fire">
+    <g id="fire1" class="element fire radial">
       <use xlink:href="#squiggle" transform="translate(50, 50) rotate(108)"/>
       <use xlink:href="#squiggle" transform="translate(50, 50) rotate(126)"/>
       <use xlink:href="#squiggle" transform="translate(50, 50) rotate(144)"/>
       <use xlink:href="#squiggle" transform="translate(50, 50) rotate(162)"/>
+    </g>
+    <g id="fire2" class="element fire linear">
+        <use xlink:href="#squiggle" transform="translate(10, 50) rotate(90) scale(0.94, 1)"/>
+        <use xlink:href="#squiggle" transform="translate(20, 50) rotate(90) scale(0.94, 1)"/>
+        <use xlink:href="#squiggle" transform="translate(30, 50) rotate(90) scale(0.94, 1)"/>
+        <use xlink:href="#squiggle" transform="translate(40, 50) rotate(90) scale(0.94, 1)"/>
     </g>
 
     <svg viewBox="30 -3 38 38" x="0" y="50" width="50" height="50">
@@ -139,12 +162,19 @@
   </g>
 
   <g id="ravenclaw" class="quadrant" clip-path="url(#ravenclaw-clip)">
-    <g id="air1" class="element air">
+    <g id="air1" class="element air radial">
       <use xlink:href="#line" transform="translate(50, 50) rotate(18)"/>
       <use xlink:href="#line" transform="translate(50, 50) rotate(36)"/>
       <use xlink:href="#line" transform="translate(50, 50) rotate(54)"/>
       <use xlink:href="#line" transform="translate(50, 50) rotate(72)"/>
     </g>
+    <g id="air2" class="element air linear">
+      <line x1="60" y1="50" x2="60" y2="97"/>
+      <line x1="70" y1="50" x2="70" y2="97"/>
+      <line x1="80" y1="50" x2="80" y2="97"/>
+      <line x1="90" y1="50" x2="90" y2="97"/>
+    </g>
+
     <svg viewBox="55 0 45 45" x="50" y="50" width="50" height="50">
       <g id="raven1b" class="animal raven medieval">
         <use xlink:href="raven1.svg#raven"/>
