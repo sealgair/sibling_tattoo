@@ -120,7 +120,7 @@
       <use xlink:href="#squiggle" transform="translate(50, 50) rotate(162)"/>
     </g>
 
-    <svg viewBox="34 -3 35 35" x="0" y="50" width="50" height="50">
+    <svg viewBox="30 -3 38 38" x="0" y="50" width="50" height="50">
       <g id="lion1" class="animal lion medieval">
         <use xlink:href="lion1.svg#lion"/>
       </g>
