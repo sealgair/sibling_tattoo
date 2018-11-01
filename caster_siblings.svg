@@ -26,9 +26,11 @@
       stroke-width: 0.5;
       stroke: black;
       stroke-linecap: round;
+      --accent-fill: white;
     }
     .badger {
       fill: #424343;
+      --light-fill: #a0a1a1;
     }
     .raven {
       fill: #8C7853;
