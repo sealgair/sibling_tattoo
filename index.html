@@ -17,6 +17,8 @@
 </head>
 <body>
     <div id="wrapper"><object id="tattoo" data="caster_siblings.svg" type="image/svg+xml"></object></div>
+    <button id="all-color">Color All</button>
+    
     <script>
     $(function() {
         var svg = $("#tattoo").getSVG();
@@ -41,6 +43,9 @@
             if (x > 50 && y > 50) {
                 svg.find("#ravenclaw").addClass("active");
             }
+        });
+        $("#all-color").click(function(event) {
+            svg.find(".quadrant").addClass("active");
         });
 
         var r = Math.floor(Math.random() * 4);
