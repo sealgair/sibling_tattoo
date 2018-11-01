@@ -41,7 +41,7 @@
     }
     .active .badger {
       fill: #424343;
-      --light-fill: #bcbcbd;
+      --light-fill: #eaeaeb;
     }
     .active .raven {
       fill: #8C7853;

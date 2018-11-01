@@ -42,6 +42,10 @@
                 svg.find("#ravenclaw").addClass("active");
             }
         });
+
+        var r = Math.floor(Math.random() * 4);
+        var house = ["#hufflepuff", "#slytherin", "#gryffindor", "#ravenclaws"][r];
+        svg.find(house).addClass("active");
     });
     </script>
 </body>
