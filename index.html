@@ -7,9 +7,42 @@
     body {
         background-color: #fff2e4;
     }
+    #wrapper {
+        display: inline-block;
+    }
+    #tattoo {
+        pointer-events: none;
+    }
     </style>
 </head>
 <body>
-    <object id="tattoo" data="caster_siblings.svg" type="image/svg+xml"></object>
+    <div id="wrapper"><object id="tattoo" data="caster_siblings.svg" type="image/svg+xml"></object></div>
+    <script>
+    $(function() {
+        var svg = $("#tattoo").getSVG();
+        $("#wrapper").click(function(event) {
+            svg.find(".quadrant").removeClass("active");
+            
+            var $target = $(event.target);
+            var offset = $target.offset();
+            var x = parseFloat((event.pageX - offset.left) / ($target.innerWidth()) * 100).toFixed(2);
+            var y = parseFloat((event.pageY - offset.top) / ($target.innerHeight()) * 100).toFixed(2);
+            console.log(x, y);
+            
+            if (x < 50 && y < 50) {
+                svg.find("#hufflepuff").addClass("active");
+            }
+            if (x > 50 && y < 50) {
+                svg.find("#slytherin").addClass("active");
+            }
+            if (x < 50 && y > 50) {
+                svg.find("#gryffindor").addClass("active");
+            }
+            if (x > 50 && y > 50) {
+                svg.find("#ravenclaw").addClass("active");
+            }
+        });
+    });
+    </script>
 </body>
 </html>

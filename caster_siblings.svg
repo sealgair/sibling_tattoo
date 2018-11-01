@@ -3,42 +3,53 @@
       viewBox="0 0 100 100"
       width="800" height="800">
   <style>
+    :root {
+      --skin-tone: #fff2e4;
+    }
     .element {
       fill: transparent;
       stroke-width: 3;
       stroke-linecap: round;
       opacity: 0.6;
+      stroke: #D79349;
     }
-    .earth {
+    .active .earth {
       stroke: gold;
     }
-    .water {
+    .active .water {
       stroke: green;
     }
-    .fire {
+    .active .fire {
       stroke: red;
     }
-    .air {
+    .active .air {
       stroke: #87cefa;
     }
-  
+
     .animal {
       stroke-width: 0.5;
-      stroke: black;
       stroke-linecap: round;
+      stroke: #333;
+      fill: var(--skin-tone);
+      --light-fill: white;
       --accent-fill: white;
     }
-    .badger {
-      fill: #424343;
-      --light-fill: #a0a1a1;
+  
+    .active .animal {
+      stroke: black;
+      --accent-fill: white;
     }
-    .raven {
+    .active .badger {
+      fill: #424343;
+      --light-fill: #bcbcbd;
+    }
+    .active .raven {
       fill: #8C7853;
     }
-    .snake {
+    .active .snake {
       fill: #C0C0C0;
     }
-    .lion {
+    .active .lion {
       fill: #D4AF37;
     }
   </style>
@@ -80,9 +91,9 @@
     </filter>
   </defs>
 
-  <rect x="0" y="0" width="100" height="100" stroke-width="0" fill="#fff2e4"/> 
+  <rect x="0" y="0" width="100" height="100" stroke-width="0" fill="var(--skin-tone)"/> 
 
-  <g id="hufflepuff" clip-path="url(#hufflepuff-clip)">
+  <g id="hufflepuff" class="quadrant" clip-path="url(#hufflepuff-clip)">
     <g id="earth1" class="element earth">
       <circle cx="50" cy="50" r="16"/>
       <circle cx="50" cy="50" r="26"/>
@@ -97,7 +108,7 @@
     </svg>
   </g>
 
-  <g id="slytherin" clip-path="url(#slytherin-clip)">
+  <g id="slytherin" class="quadrant" clip-path="url(#slytherin-clip)">
     <g id="water1" class="element water">
       <path d="M 66 50 Q 63.83 47.81 65.22 45.06 Q 66.93 41.37 62.94 40.60 Q 59.90 40.10 59.40 37.06 Q 58.63 33.07 54.94 34.78 Q 52.19 36.17 50.00 34.00"/>
       <path d="M 76 50 Q 73.85 47.31 75.35 44.21 Q 77.37 40.42 73.43 38.72 Q 70.32 37.23 70.33 33.79 Q 70.51 29.49 66.21 29.67 Q 62.77 29.68 61.28 26.57 Q 59.58 22.63 55.79 24.65 Q 52.69 26.15 50.00 24.00"/>
@@ -112,7 +123,7 @@
     </svg>  
   </g>
 
-  <g id="gryffindor" clip-path="url(#gryffindor-clip)">
+  <g id="gryffindor" class="quadrant" clip-path="url(#gryffindor-clip)">
     <g id="fire1" class="element fire">
       <use xlink:href="#squiggle" transform="translate(50, 50) rotate(108)"/>
       <use xlink:href="#squiggle" transform="translate(50, 50) rotate(126)"/>
@@ -127,7 +138,7 @@
     </svg>  
   </g>
 
-  <g id="ravenclaw" clip-path="url(#ravenclaw-clip)">
+  <g id="ravenclaw" class="quadrant" clip-path="url(#ravenclaw-clip)">
     <g id="air1" class="element air">
       <use xlink:href="#line" transform="translate(50, 50) rotate(18)"/>
       <use xlink:href="#line" transform="translate(50, 50) rotate(36)"/>
