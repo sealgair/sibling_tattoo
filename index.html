@@ -13,23 +13,35 @@
     #tattoo {
         pointer-events: none;
     }
+    #controls {
+        padding: 1em;
+    }
+    #controls button {
+        font-size: 24pt;
+        padding: 5px 10px;
+        border-radius: 10px;
+        background-color: #D79349;
+        color: #fff2e4;
+        border: 3px solid black;
+    }
     </style>
 </head>
 <body>
     <div id="wrapper"><object id="tattoo" data="caster_siblings.svg" type="image/svg+xml"></object></div>
+    <p id="controls"/>
     <button id="all-color">Color All</button>
+    </p>
     
     <script>
     $(function() {
-        var svg = $("#tattoo").getSVG();
-        $("#wrapper").click(function(event) {
+        $("#wrapper").on("click touchstart", function(event) {
+            var svg = $("#tattoo").getSVG();
             svg.find(".quadrant").removeClass("active");
             
             var $target = $(event.target);
             var offset = $target.offset();
             var x = parseFloat((event.pageX - offset.left) / ($target.innerWidth()) * 100).toFixed(2);
             var y = parseFloat((event.pageY - offset.top) / ($target.innerHeight()) * 100).toFixed(2);
-            console.log(x, y);
             
             if (x < 50 && y < 50) {
                 svg.find("#hufflepuff").addClass("active");
@@ -44,12 +56,15 @@
                 svg.find("#ravenclaw").addClass("active");
             }
         });
-        $("#all-color").click(function(event) {
+        $("#all-color").on("click touchstart", function(event) {
+            var svg = $("#tattoo").getSVG();
             svg.find(".quadrant").addClass("active");
         });
 
         var r = Math.floor(Math.random() * 4);
         var house = ["#hufflepuff", "#slytherin", "#gryffindor", "#ravenclaws"][r];
+        
+        var svg = $("#tattoo").getSVG();
         svg.find(house).addClass("active");
     });
     </script>
