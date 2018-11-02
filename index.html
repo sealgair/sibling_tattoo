@@ -32,10 +32,16 @@
     <div id="controls"/>
         <button id="all-color">Color All</button>
         <br/>
-        <label3>Background:</label>
+        <br/>
+        <label>Background:</label>
         <button id="back-radial" class="background-change" value="radial">Radial</button>
         <button id="back-linear" class="background-change" value="linear">Linear</button>
-        <button id="back-linear" class="background-change" value="circle">Circle</button>
+        <button id="back-circle" class="background-change" value="circle">Circle</button>
+        <br/>
+        <br/>
+        <label>Animal:</label>
+        <button id="animal-head" class="animal-change" value="head">Head</button>
+        <button id="animal-body" class="animal-change" value="body">Body</button>
     </div>
     
     <script>
@@ -71,6 +77,11 @@
             svg.find(".element").removeClass('active');
             svg.find(".element."+event.target.value).addClass('active');
         });
+        $(".animal-change").on("click touchstart", function(event) {
+            var svg = $("#tattoo").getSVG();
+            svg.find(".animal").removeClass('active');
+            svg.find(".animal."+event.target.value).addClass('active');
+        });
 
         var r = Math.floor(Math.random() * 4);
         var house = ["#hufflepuff", "#slytherin", "#gryffindor", "#ravenclaws"][r];
@@ -78,7 +89,7 @@
         var svg = $("#tattoo").getSVG();
         svg.find(house).addClass("active");
         svg.find(".element.radial").addClass('active');
-
+        svg.find(".animal.head").addClass('active');
     });
     </script>
 </body>

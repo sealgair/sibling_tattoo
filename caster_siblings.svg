@@ -42,6 +42,11 @@
       fill: var(--skin-tone);
       --light-fill: white;
       --accent-fill: white;
+      opacity: 0;
+      vector-effect="non-scaling-stroke"
+    }
+    .animal.active {
+      opacity: 1;
     }
   
     .active .animal {
@@ -119,9 +124,14 @@
       <circle cx="50" cy="50" r="47"/>
     </g>
 
-    <svg viewBox="0 32 30 30 " x="0" y="0" width="50" height="50">
-      <g id="badger1" class="animal badger medieval">
+    <svg viewBox="0 32 30 30" x="0" y="0" width="50" height="50">
+      <g id="badger1" class="animal badger head">
         <use xlink:href="badger1.svg#badger"/>
+      </g>
+    </svg>
+    <svg viewBox="0 -20 100 100" x="0" y="0" width="50" height="50">
+      <g id="badger1" class="animal badger body">
+        <use xlink:href="badger2.svg#badger"/>
       </g>
     </svg>
   </g>
@@ -144,7 +154,7 @@
     </g>
 
     <svg viewBox="66 10 35 35" x="50" y="0" width="50" height="50">
-      <g id="snake1" class="animal snake medieval">
+      <g id="snake1" class="animal snake head">
         <use xlink:href="snake1.svg#snake"/>
       </g>
     </svg>  
@@ -168,7 +178,7 @@
     </g>
 
     <svg viewBox="30 -3 38 38" x="0" y="50" width="50" height="50">
-      <g id="lion1" class="animal lion medieval">
+      <g id="lion1" class="animal lion head">
         <use xlink:href="lion1.svg#lion"/>
       </g>
     </svg>  
@@ -192,7 +202,7 @@
     </g>
 
     <svg viewBox="55 0 45 45" x="50" y="50" width="50" height="50">
-      <g id="raven1b" class="animal raven medieval">
+      <g id="raven1b" class="animal raven head">
         <use xlink:href="raven1.svg#raven"/>
       </g>
     </svg>
