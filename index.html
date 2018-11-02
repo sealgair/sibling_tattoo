@@ -72,13 +72,14 @@
             svg.find(".element."+event.target.value).addClass('active');
         });
 
-        var r = Math.floor(Math.random() * 4);
-        var house = ["#hufflepuff", "#slytherin", "#gryffindor", "#ravenclaws"][r];
-        
-        var svg = $("#tattoo").getSVG();
-        svg.find(house).addClass("active");
-        svg.find(".element.radial").addClass('active');
-
+        $('#tattoo').on('load', function(event) {
+            var r = Math.floor(Math.random() * 4);
+            var house = ["#hufflepuff", "#slytherin", "#gryffindor", "#ravenclaws"][r];
+            
+            var svg = $("#tattoo").getSVG();
+            svg.find(house).addClass("active");
+            svg.find(".element.radial").addClass('active');
+        });
     });
     </script>
 </body>
