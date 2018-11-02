@@ -187,6 +187,11 @@
         <use xlink:href="lion1.svg#lion"/>
       </g>
     </svg>  
+    <svg viewBox="0 0 100 100" x="0" y="50" width="50" height="50">
+      <g id="lion2" class="animal lion body">
+        <use xlink:href="lion2.svg#lion" transform="translate(10 10) scale(0.8)"/>
+      </g>
+    </svg>  
   </g>
 
   <g id="ravenclaw" class="quadrant" clip-path="url(#ravenclaw-clip)">
