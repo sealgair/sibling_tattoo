@@ -10,8 +10,12 @@
       fill: transparent;
       stroke-width: 3;
       stroke-linecap: round;
-      stroke: #D79349;
+      color: #D79349;
+      stroke: currentColor;
       opacity: 0;
+    }
+    .element.circle.active {
+      fill: currentColor;
     }
 
     .element.active {
@@ -19,16 +23,16 @@
     }
 
     .active .earth {
-      stroke: gold;
+      color: gold;
     }
     .active .water {
-      stroke: green;
+      color: green;
     }
     .active .fire {
-      stroke: red;
+      color: red;
     }
     .active .air {
-      stroke: #87cefa;
+      color: #87cefa;
     }
 
     .animal {
@@ -111,6 +115,9 @@
       <line x1="3" y1="30" x2="50" y2="30"/>
       <line x1="3" y1="40" x2="50" y2="40"/>
     </g>
+    <g id="earth3" class="element earth circle">
+      <circle cx="50" cy="50" r="47"/>
+    </g>
 
     <svg viewBox="0 32 30 30 " x="0" y="0" width="50" height="50">
       <g id="badger1" class="animal badger medieval">
@@ -131,6 +138,9 @@
         <use xlink:href="#squiggle" transform="translate(50, 20) scale(0.94, 1)"/>
         <use xlink:href="#squiggle" transform="translate(50, 30) scale(0.94, 1)"/>
         <use xlink:href="#squiggle" transform="translate(50, 40) scale(0.94, 1)"/>
+    </g>
+    <g id="water3" class="element water circle">
+      <circle cx="50" cy="50" r="47"/>
     </g>
 
     <svg viewBox="66 10 35 35" x="50" y="0" width="50" height="50">
@@ -153,6 +163,9 @@
         <use xlink:href="#squiggle" transform="translate(30, 50) rotate(90) scale(0.94, 1)"/>
         <use xlink:href="#squiggle" transform="translate(40, 50) rotate(90) scale(0.94, 1)"/>
     </g>
+    <g id="fire3" class="element fire circle">
+      <circle cx="50" cy="50" r="47"/>
+    </g>
 
     <svg viewBox="30 -3 38 38" x="0" y="50" width="50" height="50">
       <g id="lion1" class="animal lion medieval">
@@ -173,6 +186,9 @@
       <line x1="70" y1="50" x2="70" y2="97"/>
       <line x1="80" y1="50" x2="80" y2="97"/>
       <line x1="90" y1="50" x2="90" y2="97"/>
+    </g>
+    <g id="air3" class="element air circle">
+      <circle cx="50" cy="50" r="47"/>
     </g>
 
     <svg viewBox="55 0 45 45" x="50" y="50" width="50" height="50">
