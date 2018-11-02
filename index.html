@@ -74,7 +74,7 @@
 
         $('#tattoo').on('load', function(event) {
             var r = Math.floor(Math.random() * 4);
-            var house = ["#hufflepuff", "#slytherin", "#gryffindor", "#ravenclaws"][r];
+            var house = ["#hufflepuff", "#slytherin", "#gryffindor", "#ravenclaw"][r];
             
             var svg = $("#tattoo").getSVG();
             svg.find(house).addClass("active");
