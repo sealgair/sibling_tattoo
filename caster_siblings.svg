@@ -216,6 +216,11 @@
         <use xlink:href="raven1.svg#raven"/>
       </g>
     </svg>
+    <svg viewBox="0 0 100 100" x="50" y="50" width="50" height="50">
+      <g id="raven1b" class="animal raven body">
+        <use xlink:href="raven2.svg#raven" transform="translate(10 10) scale(0.75)"/>
+      </g>
+    </svg>
   </g>
 
   <g id="grid" stroke="black" stroke-width="1" >
