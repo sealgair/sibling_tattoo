@@ -23,6 +23,9 @@
         border-radius: 10px;
         background-color: #D79349;
         color: #fff2e4;
+        border: 3px solid #D79349;
+    }
+    #controls button.active {
         border: 3px solid black;
     }
     </style>
@@ -73,11 +76,15 @@
             svg.find(".quadrant").addClass("active");
         });
         $(".background-change").on("click touchstart", function(event) {
+            $(".background-change").removeClass('active');
+            $(event.target).addClass('active');
             var svg = $("#tattoo").getSVG();
             svg.find(".element").removeClass('active');
             svg.find(".element."+event.target.value).addClass('active');
         });
         $(".animal-change").on("click touchstart", function(event) {
+            $(".animal-change").removeClass('active');
+            $(event.target).addClass('active');
             var svg = $("#tattoo").getSVG();
             svg.find(".animal").removeClass('active');
             svg.find(".animal."+event.target.value).addClass('active');
@@ -89,7 +96,9 @@
             
             var svg = $("#tattoo").getSVG();
             svg.find(house).addClass("active");
+            $("#back-radial").addClass('active');
             svg.find(".element.radial").addClass('active');
+            $("#animal-head").addClass('active');
             svg.find(".animal.head").addClass('active');
         });
     });
